@@ -32,6 +32,7 @@ If you prefer, you're allowed to use a different tech stack, but your solution m
 5. As user, I want to be able to place order for added products in cart
 6. As user, I want to see my order history
 7. As user, I want to be able to logout
+8. Use **_product_data.xlsx_** as the sample data for the product
 
 ## Bonus Tasks
 
