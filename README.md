@@ -1,1 +1,88 @@
-# pre-assessment
+<p align="center">
+    <img align="center" src="https://his.hargreaves.asia/wp-content/uploads/2020/05/HIS-Logo_Horizontal-FullColour-2048x482.png">
+</p>
+
+# Hargreaves Interview Case Study
+
+This case study is designed for candidates to showcase their skills and coding style focusing on Laravel, VueJS and Docker. You may use more technologies apart from the 3 mentioned.
+
+## Instructions
+
+- Fork this repo to your github account
+- Complete the tasks given
+- Once completed, create a PR to this repository
+- Lastly, add some guidance or instruction on how to run your code
+- Failure to meet the basic requirements outlined in this case study may result in your submission being deprioritized during the review process
+
+## Requirements
+
+You must work on this assignment using:
+- Vue
+- Laravel
+- Docker (Optional)
+
+If you prefer, you're allowed to use a different tech stack, but your solution must include both a backend and a frontend built using a JavaScript framework (e.g. Vue, React, etc.). Blade-only submissions (without a JS framework) will not be accepted.
+
+## Tasks
+
+1. As guest, I want to be able to register an account
+2. As guest, I want to be able to login using registered account
+3. As user, I want to see list of products after login
+4. As user, I want to be able to add product to cart
+5. As user, I want to be able to place order for added products in cart
+6. As user, I want to see my order history
+7. As user, I want to be able to logout
+
+## Bonus Tasks
+
+1. Verify email after registration
+2. User activity log e.g. login, logout, add to cart, place order etc
+3. Product attributes and filtering e.g brand, category
+4. Different user can see different price for products
+5. Add unit tests
+6. Deploy app to a server
+
+## Key Evaluation Criteria
+
+**Backend**
+
+While completing the above tasks, we will be particularly looking at how you handle the following aspects:
+
+1. **Data Validation**: Proper validation of user inputs and data integrity checks.
+
+2. **Data Transformation**: Efficient and logical transformation of data between different parts of the application.
+
+3. **Query Efficiency**: Optimization of database queries, including proper use of Laravel's query builder and Eloquent ORM features.
+
+4. **Consistent Naming Convention**: Use of snake_case for database columns, camelCase for PHP and JavaScript variables, and adherence to Laravel and Vue.js naming conventions.
+
+5. **Proper Handling of Monetary Values**: Accurate representation and calculation of prices and totals.
+
+6. **Database Design**: Well-structured migration files that demonstrate thoughtful schema design, including appropriate indexes.
+
+7. **Code Organization**: Clear, modular, and maintainable code structure.
+
+8. **Security Best Practices**: Implementation of necessary security measures to protect against common vulnerabilities.
+
+9. **API Design** (if applicable): RESTful design principles and clear documentation.
+
+10. **Error Handling**: Graceful error handling and informative error messages.
+
+**Frontend**
+
+1. **Use of JavaScript Framework**: A modern JS framework (e.g., Vue, React) is required. Blade-only implementations will not be accepted.
+
+2. **Component Structure**: UI broken into reusable, manageable components.
+
+3. **User Experience**: Clear navigation, responsiveness, and usability.
+
+4. **Styling**: Use of any CSS framework or template to ensure consistent design.
+
+5. **Frontend Error Handling**: Proper user feedback for failed actions or edge cases.
+
+## Submission Guidelines
+
+- Ensure your code is well-commented and follows PSR-12 coding standards for PHP.
+- Include a README.md file with setup instructions and any assumptions made.
+
+We look forward to reviewing your implementation and discussing your approach during the interview process.
