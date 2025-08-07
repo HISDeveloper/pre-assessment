@@ -4,14 +4,13 @@ namespace App\Http\Controllers\API;
 
 use App\Models\User;
 use App\Traits\RequestResponse;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
+use Exception;
 
-class AuthController extends Controller
+class AuthController
 {
     use RequestResponse;
 
@@ -66,7 +65,7 @@ class AuthController extends Controller
             RateLimiter::hit($key, 300); // Lock for 5 minutes
 
             return $this->success('Registration successful. Please check your email for verification.');
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return $this->internalServerError('Registration failed: ' . $e->getMessage());
         }
     }
@@ -91,7 +90,7 @@ class AuthController extends Controller
             $token = $user->createToken('auth_token')->plainTextToken;
 
             return $this->success('Login successful', ['token' => $token, 'user' => $user]);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return $this->internalServerError('Login failed: '.$e->getMessage());
         }
     }
@@ -102,7 +101,7 @@ class AuthController extends Controller
             $request->user()->tokens()->delete();
 
             return $this->success('Logged out');
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return $this->internalServerError('Logout failed: '.$e->getMessage());
         }
     }
@@ -122,7 +121,7 @@ class AuthController extends Controller
             }
 
             return response()->view('auth.verify-success');
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return $this->internalServerError('Verification failed: '.$e->getMessage());
         }
     }

@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\Order;
 use App\Models\CartItem;
+use App\Models\Order;
 use App\Models\OrderItem;
 use App\Traits\RequestResponse;
 use Illuminate\Support\Facades\Auth;
 use Exception;
-use App\Http\Controllers\Controller;
 
-class OrderController extends Controller
+class OrderController
 {
     use RequestResponse;
 
@@ -47,7 +46,7 @@ class OrderController extends Controller
             return $this->success("Order placed successfully", ['order_id' => $order->id]);
         } catch (Exception $e) {
             return $this->internalServerError("Failed to place order: " . $e->getMessage());
-        }        
+        }
     }
 
     public function orderHistory()

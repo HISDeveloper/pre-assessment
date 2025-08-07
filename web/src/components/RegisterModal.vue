@@ -52,11 +52,6 @@
               </li>
             </ul>
 
-            <!-- <div class="mb-3">
-              <label class="form-label">Confirm Password</label>
-              <input v-model="confirmPassword" type="password" class="form-control" required />
-            </div> -->
-
             <div class="mb-3">
               <label class="form-label">Confirm Password</label>
               <input v-model="confirmPassword" type="password" class="form-control" required />

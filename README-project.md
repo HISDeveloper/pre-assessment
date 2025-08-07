@@ -26,12 +26,18 @@ cp .env.example .env
 ```
 Set your database, Mailtrap credentials, and other variables.
 
-### 2. Setup with Docker
+### 2. Pre-install vendor locally before mounting into Docker
+```bash
+cd into /api
+composer install
+```
+
+### 3. Setup with Docker
 ```bash
 docker-compose up -d --build
 ```
 
-### 3. Visit the app
+### 4. Visit the app
 - Frontend (Vue): http://localhost:8888
 - API (Laravel): http://localhost:9999
 - Database Admin (Adminer): http://localhost:9889

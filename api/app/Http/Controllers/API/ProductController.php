@@ -6,9 +6,8 @@ use App\Models\Product;
 use App\Traits\RequestResponse;
 use Illuminate\Http\Request;
 use Exception;
-use Illuminate\Routing\Controller;
 
-class ProductController extends Controller
+class ProductController
 {
     use RequestResponse;
 
@@ -58,7 +57,7 @@ class ProductController extends Controller
     public function filterProducts(Request $request)
     {
         try {
-             $query = Product::query();
+            $query = Product::query();
 
             if ($request->filled('category')) {
                 $query->where('category', $request->category);

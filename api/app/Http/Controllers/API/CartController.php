@@ -8,9 +8,8 @@ use App\Traits\RequestResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Exception;
-use App\Http\Controllers\Controller;
 
-class CartController extends Controller
+class CartController
 {
     use RequestResponse;
 
