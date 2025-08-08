@@ -1,0 +1,51 @@
+
+services:
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: hargreaves_api
+    ports:
+      - "9999:8000"
+    volumes:
+      - ./api:/var/www/html
+    depends_on:
+      - db
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: hargreaves_web
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host"
+    depends_on:
+      - api
+
+  db:
+    image: mysql:8.0
+    container_name: hargreaves_db
+    environment:
+      MYSQL_DATABASE: hargreaves_db
+      MYSQL_ROOT_PASSWORD: secret
+    ports:
+      - "3307:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d:ro
+
+  adminer:
+    image: adminer
+    container_name: hargreaves_adminer
+    ports:
+      - "9889:8080"
+
+volumes:
+  dbdata:
+
